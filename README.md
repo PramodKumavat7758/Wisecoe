@@ -32,10 +32,12 @@ sudo apt install fortune-mod cowsay -y
 2. **Dockerization**
    1. Create docker file with the name **Dockerfile** , navigate to the path of file and execute.
    2. Build the Dockerfile using below command.
+      
       ```bash
       docker build -t wisecow-image .
       ```
    3. Create repository/ container registry to Dockerhub and push the image with proper tag to it.
+      
       ```bash
       docker push _yourRepositoryName_/wisecow_image:latest
       ```
@@ -53,69 +55,48 @@ sudo apt install fortune-mod cowsay -y
    kubectl apply -f service_manifests_kubernetes.yaml
    ```
    4. Check deployments and services running.Use commands.
+      
     ```bash
    kubectl get deployments
    kubectl get services
    ```
+4. **Continuous Integration And Deployment**
+   1.Github workflow for
+   a. Create yaml file in ./github/workflows
+   b. Set the secrets **secrets.DOCKER_USERNAME** and **secrets.DOCKER_PASSWORD** with your Dockerhub username and docker image name.
+   
 
-4. **Access the Application:**
-
+6. **TLS Implementaion**
+   1. Install OpenSSL.
+      
+   ```bash
+   sudo apt-get install openssl  
+   ```
+   2. Generate Private Key.
+      
+   ```bash
+   openssl genrsa -out server.key 2048
+   ```
+   3. Generate Certificate Signing Request (CSR)
+      
+   ```bash
+   openssl req -new -key server.key -out server.csr
+   ```
+   4. Self-Sign Certificate
+      
+   ```bash
+   openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+   ```
+   5. Deploy to Kubernetes. Reference this TLS secret in Kubernetes deployment configuration to enable TLS
+      
+   ```bash
+   kubectl create secret tls tls-secret --cert=server.crt --key=server.key
+   ```
    
 
 ## Usage
 
-- Take online assesment.
-- Create random quizes.
-- It help to check the knowledge about the topic
-
-
-## Admin Login :
-
-![Admin](Admin.png)
-
-1. **Admin Home Page:**
-   
-![Admin Home](AdminHome.png)
-
-3. **Question List:**
-   
-![Question List](QuestionList.png)
-
-4. **Create Question:**
-   
- ![Create Question](CreateQuestion.png)
-
-5. **Quiz List:**
-   
-![Quiz List](QuizList.png)
-
-6. **Create Quiz:**
-   
-![Create Quiz](CreateQuiz.png)
-
-7. **User List:**
-   
-![User List](UserList.png)
-
-
-
-## User Login :
-
-![User Login](UserLogin.png)
-
-1. **User Home:**
-   
-![User Home](UserrHome.png)
-
-2. **Attempt Quiz List:**
-   
-   ![Attempt Quiz List](AtttemptQuizList.png)
-   
-3. **Attempting Quiz:**
-   
-![Attempt Quiz](AttemptingQuiz.png)
-
-4. **Quiz Result:**
+-
 
    ![Quiz Result](QuizResult.png)
 
