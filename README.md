@@ -18,11 +18,15 @@ communication.
 
 To run this project on your local machine, follow these steps:
 
-1. **Prerequisites**
+1. **Installation:**
 
-   ```bash
-  sudo apt install fortune-mod cowsay -y
-   ```
+You can install `fortune-mod` and `cowsay` on Debian-based systems like Ubuntu using the following commands:
+
+```bash
+sudo apt update
+sudo apt install fortune-mod cowsay -y
+```
+
 
 2. **Configure the Database:**
 
