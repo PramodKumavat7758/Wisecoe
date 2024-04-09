@@ -28,15 +28,14 @@ sudo apt install fortune-mod cowsay -y
 ```
 
 
-2. **Configure the Database:**
+2. **Dockerization**
+   1. Create docker file with the name **Dockerfile** , navigate to the path of file and execute using following command.
+   2. Build the Dockerfile using below command.
+      ```bash
+docker build -t wisecow-image .
+```
 
-   Create a MySQL database and update the `application.properties` file with your database configuration:
-
-   ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
-   spring.datasource.username=your_username
-   spring.datasource.password=your_password
-   ```
+   
 
 3. **Build and Run the Application:**
 
