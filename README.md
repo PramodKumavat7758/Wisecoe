@@ -35,6 +35,10 @@ sudo apt install fortune-mod cowsay -y
       ```bash
       docker build -t wisecow-image .
       ```
+   3. Create repository/ container registry to Dockerhub and push the image with proper tag to it.
+      ```bash
+      docker push _yourRepositoryName_/wisecow_image:latest
+      ```
 
    
 
