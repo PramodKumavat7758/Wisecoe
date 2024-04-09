@@ -36,15 +36,18 @@ sudo apt install fortune-mod cowsay -y
       ```bash
       docker build -t wisecow-image .
       ```
+   ![Docker Images](DockerImages.png)
+   
    3. Create repository/ container registry to Dockerhub and push the image with proper tag to it.
       
       ```bash
       docker push _yourRepositoryName_/wisecow_image:latest
       ```
 
+   ![Dockerrization](ImagePush.png)
    
 
-3. **Kubernetes Deployment :**
+2. **Kubernetes Deployment :**
  
    1. Create Kubernetes deployment manifest files for deploying the Wisecow application in a Kubernetes environment. ex : deployment_manifests_kubernetes.yaml
    2. Create service file exposed as a Kubernetes service for accessibility. ex : service_manifests_kubernetes.yaml
@@ -54,13 +57,18 @@ sudo apt install fortune-mod cowsay -y
    kubectl apply -f deployment_manifests_kubernetes.yaml
    kubectl apply -f service_manifests_kubernetes.yaml
    ```
+   ![Kubernetes Deployment](deployment_manifests_kubernetes.png)
+
+   
    4. Check deployments and services running.Use commands.
       
     ```bash
    kubectl get deployments
    kubectl get services
    ```
-4. **Continuous Integration And Deployment**
+    ![Kubernetes Service Deployment](service_manifests_kubernetes.png)
+   
+5. **Continuous Integration And Deployment**
    1.Github workflow for
    a. Create yaml file in ./github/workflows
    b. Set the secrets **secrets.DOCKER_USERNAME** and **secrets.DOCKER_PASSWORD** with your Dockerhub username and docker image name.
