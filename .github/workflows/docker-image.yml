@@ -1,0 +1,25 @@
+name: Docker Build, Push, and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-push-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run:  |
+          docker build -t pramodkumavat190/wisecow_image:latest .
+          docker login -u ${{ secrets.pramodkumavat190 }} -p ${{ secrets.Pr@mod#7758998859 }}
+          docker push pramodkumavat190/wisecow_image:latest
+      
+      - name: Deploy to Kubernates
+        run:  |
+          kubectl apply -f deployment_manifests_kubernetes.yaml
+          kubectl apply -f service_manifests_kubernetes
