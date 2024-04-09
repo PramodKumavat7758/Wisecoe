@@ -27,6 +27,7 @@ You can install `fortune-mod` and `cowsay` on Debian-based systems like Ubuntu u
 sudo apt update
 sudo apt install fortune-mod cowsay -y
 ```
+![WisecowRun](wisecowRun.png)
 
 
 2. **Dockerization**
@@ -44,7 +45,7 @@ sudo apt install fortune-mod cowsay -y
       docker push _yourRepositoryName_/wisecow_image:latest
       ```
 
-   ![Dockerrization](ImagePush.png)
+   ![Dockerization](ImagePush.png)
    
 
 2. **Kubernetes Deployment :**
@@ -57,22 +58,21 @@ sudo apt install fortune-mod cowsay -y
    kubectl apply -f deployment_manifests_kubernetes.yaml
    kubectl apply -f service_manifests_kubernetes.yaml
    ```
-   ![Kubernetes Deployment](deployment_manifests_kubernetes.png)
-
-   
+      
    4. Check deployments and services running.Use commands.
       
     ```bash
    kubectl get deployments
    kubectl get services
    ```
-    ![Kubernetes Service Deployment](service_manifests_kubernetes.png)
+    ![Kubernete  Service Deployment](status.png)
    
 5. **Continuous Integration And Deployment**
    1.Github workflow for
    a. Create yaml file in ./github/workflows
    b. Set the secrets **secrets.DOCKER_USERNAME** and **secrets.DOCKER_PASSWORD** with your Dockerhub username and docker image name.
    
+   ![workflow](workflow.png)
 
 6. **TLS Implementaion**
    1. Install OpenSSL.
@@ -80,6 +80,9 @@ sudo apt install fortune-mod cowsay -y
    ```bash
    sudo apt-get install openssl  
    ```
+   ![openssl](openssl.png)
+
+   
    2. Generate Private Key.
       
    ```bash
@@ -95,6 +98,8 @@ sudo apt install fortune-mod cowsay -y
    ```bash
    openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
    ```
+![Certificate](sert.png)
+   
    5. Deploy to Kubernetes. Reference this TLS secret in Kubernetes deployment configuration to enable TLS
       
    ```bash
