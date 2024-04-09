@@ -16,7 +16,7 @@ jobs:
       - name: Build Docker image
         run:  |
           docker build -t pramodkumavat190/wisecow_image:latest .
-          docker login -u ${{ secrets.pramodkumavat190 }} -p ${{ secrets.Pr@mod#7758998859 }}
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker push pramodkumavat190/wisecow_image:latest
       
       - name: Deploy to Kubernates
