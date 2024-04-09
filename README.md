@@ -106,7 +106,7 @@ sudo apt install fortune-mod cowsay -y
    kubectl create secret tls tls-secret --cert=server.crt --key=server.key
    ```
 7. **Output**
- ![WisecowRun](wisecowOutput.png)
+   ![WisecowRun](wisecowOutput.png)
 ---
 
 Feel free to customize this README to provide more specific information about your project. Include any additional setup instructions, prerequisites, or specific details about your application that you think would be helpful for users.
