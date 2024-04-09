@@ -1,4 +1,4 @@
-# Wisecow Application - Accunox
+# Cow wisdom  - Accuknox
 
 ## Title: Containerisation and Deployment of Wisecow Application on Kubernetes 
 Objective : To containerize and deploy the Wisecow application, hosted in the
@@ -8,35 +8,20 @@ communication.
 
 
 
-- Add a new questions / create quiz by selecting random questions and categories.
-- Update / Delete existing questions.
-- Delete user record.
-- Register new user.
-- Display a list of all users.
-- Score displayed for correct quiz answer.
-- Login / Logoout support using spring security.
-- Check user answer with existing answer from database.
-- Validation provide better security
-- Url endpoint security.
-
-## Technologies Used
---------------------------------------------------------------------------------------------------------------------
-- Java
-- Spring Boot
-- Spring MVC
-- Hibernate
-- Maven
-- Thymeleaf (for templating)
-- MySQL Database (or your preferred database)
+- Create Docker file 
+- Create Docker Image
+- Deploy container on Kubernetes Environment
+- Secure TLS communication
+- 
 
 ## Getting Started
 
 To run this project on your local machine, follow these steps:
 
-1. **Clone the repository:**
+1. **Prerequisites**
 
    ```bash
-   git clone <repository_url>
+  sudo apt install fortune-mod cowsay -y
    ```
 
 2. **Configure the Database:**
