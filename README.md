@@ -92,20 +92,6 @@ sudo apt install fortune-mod cowsay -y
    ```bash
    kubectl create secret tls tls-secret --cert=server.crt --key=server.key
    ```
-   
-
-## Usage
-
--
-
-   ![Quiz Result](QuizResult.png)
-
-## EER Diagram :
-![EER](EER.png)
-
-
-
-This project was created as a learning exercise and is based on tutorials and courses related to Spring Boot and web development.
 
 ---
 
