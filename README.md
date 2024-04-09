@@ -3,7 +3,8 @@
 ## Title: Containerisation and Deployment of Wisecow Application on Kubernetes 
 Objective : To containerize and deploy the Wisecow application, hosted in the
 above-mentioned GitHub repository, on a Kubernetes environment with secure TLS
-communication.
+communication. 
+Note: In this deployment we are using local Kubernetes cluster and application will run on localhost.
 
 
 
@@ -29,7 +30,7 @@ sudo apt install fortune-mod cowsay -y
 
 
 2. **Dockerization**
-   1. Create docker file with the name **Dockerfile** , navigate to the path of file and execute using following command.
+   1. Create docker file with the name **Dockerfile** , navigate to the path of file and execute.
    2. Build the Dockerfile using below command.
       ```bash
       docker build -t wisecow-image .
@@ -37,17 +38,25 @@ sudo apt install fortune-mod cowsay -y
 
    
 
-3. **Build and Run the Application:**
-
-   Use Maven to build and run the application:
+3. **Kubernetes Deployment :**
+ 
+   1. Create Kubernetes deployment manifest files for deploying the Wisecow application in a Kubernetes environment. ex : deployment_manifests_kubernetes.yaml
+   2. Create service file exposed as a Kubernetes service for accessibility. ex : service_manifests_kubernetes.yaml
+   3. Apply the deployment and service using following commands.
 
    ```bash
-   mvn spring-boot:run
+   kubectl apply -f deployment_manifests_kubernetes.yaml
+   kubectl apply -f service_manifests_kubernetes.yaml
+   ```
+   4. Check deployments and services running.Use commands.
+    ```bash
+   kubectl get deployments
+   kubectl get services
    ```
 
 4. **Access the Application:**
 
-   Open your web browser and access the application at [http://localhost:8080](http://localhost:8080).
+   
 
 ## Usage
 
