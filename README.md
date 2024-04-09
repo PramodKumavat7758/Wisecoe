@@ -27,7 +27,7 @@ You can install `fortune-mod` and `cowsay` on Debian-based systems like Ubuntu u
 sudo apt update
 sudo apt install fortune-mod cowsay -y
 ```
-![WisecowRun](wisecowRun.png)
+
 
 
 2. **Dockerization**
@@ -105,7 +105,8 @@ sudo apt install fortune-mod cowsay -y
    ```bash
    kubectl create secret tls tls-secret --cert=server.crt --key=server.key
    ```
-
+7. **Output**
+ ![WisecowRun](wisecowOutput.png)
 ---
 
 Feel free to customize this README to provide more specific information about your project. Include any additional setup instructions, prerequisites, or specific details about your application that you think would be helpful for users.
