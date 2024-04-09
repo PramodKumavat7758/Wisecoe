@@ -1,6 +1,6 @@
 # Cow wisdom  - Accuknox
 
-## Title: Containerisation and Deployment of Wisecow Application on Kubernetes 
+## Title: Containerization and Deployment of Wisecow Application on Kubernetes 
 Objective : To containerize and deploy the Wisecow application, hosted in the
 above-mentioned GitHub repository, on a Kubernetes environment with secure TLS
 communication. 
@@ -13,7 +13,7 @@ Note: In this deployment we are using local Kubernetes cluster and application w
 - Create Docker Image
 - Deploy container on Kubernetes Environment
 - Secure TLS communication
-- 
+  
 
 ## Getting Started
 
