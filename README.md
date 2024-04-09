@@ -32,8 +32,8 @@ sudo apt install fortune-mod cowsay -y
    1. Create docker file with the name **Dockerfile** , navigate to the path of file and execute using following command.
    2. Build the Dockerfile using below command.
       ```bash
-docker build -t wisecow-image .
-```
+      docker build -t wisecow-image .
+      ```
 
    
 
